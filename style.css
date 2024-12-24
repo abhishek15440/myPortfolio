@@ -44,6 +44,9 @@ nav {
   list-style: none;
   font-size: 1.5rem;
 }
+.nav-links a:hover{
+  background-color: rgb(235, 235, 235);
+}
 
 a {
   color: rgb(32, 117, 169);
@@ -60,8 +63,12 @@ a:hover {
 
 .logo {
   font-size: 2rem;
+  -webkit-animation: slide-in-left 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   
 }
+
+
 
 .logo:hover {
   cursor: default;
@@ -170,7 +177,6 @@ section {
   height: 80vh;
   background-color: whitesmoke;
 }
-
 .section__pic-container {
   display: flex;
   height: 400px;
@@ -178,19 +184,29 @@ section {
   margin: auto 0;
   border: 1px;
   box-shadow: auto;
+  -webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  
 }
 
 .section__text {
   align-self: center;
   text-align: center;
+  animation-delay: 0.2s;
+ 
 }
+
+
 
 .section__text p {
   font-weight: 600;
+  -webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .section__text__p1 {
   text-align: center;
+  
 }
 
 .section__text__p2 {
@@ -201,6 +217,8 @@ section {
 .title {
   font-size: 3rem;
   text-align: center;
+  -webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 #socials-container {
@@ -231,11 +249,15 @@ section {
   padding: 1rem;
   width: 8rem;
   border-radius: 2rem;
+  -webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .btn-color-1,
 .btn-color-2 {
   border: rgb(53, 53, 53) 0.1rem solid;
+  animation: slide-in-left;
+  animation-delay: 0.3s ;
 }
 
 .btn-color-1:hover,
@@ -434,4 +456,69 @@ footer {
 
 footer p {
   text-align: center;
+}
+
+/*ANIMATIONS*/
+
+.slide-in-left{
+  -webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          animation-timeline: view();
+          animation-range: entry 0 cover 30%;
+}
+ @-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right{
+  -webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation-timeline: view();
+  animation-range: entry 0 cover 30%;
+}
+ @-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
 }
